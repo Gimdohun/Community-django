@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <header>
+        <div><a href="">⌨️</a></div>
+        <div><input type="search" name="" id="" placeholder="Search user"></div>
+        <div><a href="">😁</a></div>
+    </header>
+    <nav>
+        <div id="roomWrap">
+            <div><a href="">room 1</a></div>
+            <div><a href="">room 2</a></div>
+        </div>
+    </nav>
+    <main>
+        <div id="issueWrap">
+            {% for issue in issues reversed %}
+            <div class="issue">
+                <div id="issueRoom"><a href="">{{issue.issueRoom}}</a></div>
+                <div id="issueProf"><a href="">{{issue.issueProf}}</a></div>
+                <div id="issueName"><a href="">{{issue.issueName}}</a></div>
+                <div id="issueContent"><a href="">{{issue.issueContent}}</a></div>
+                <div id="issueTime">{{issue.issueTime.hour}}:{{issue.issueTime.minute}}</div>
+                <div id="issueMore"><div>⁝</div></div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
