@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <header>
+        <div><a href="{% url 'coummunity_main' %}">⌨️</a></div>
+        <div><input type="search" name="" id="" placeholder="Search user"></div>
+        <div><a href="">😁</a></div>
+    </header>
+    <nav>
+        <a href="{% url 'create-room' %}">Create Room</a>
+        <div id="roomWrap">
+            {% for room in rooms %}
+                <div><a href="{% url 'room' room.id %}">{{ room.name }}-{{ room.id }}</a></div>
+            {% endfor %}
+        </div>
+    </nav>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+</body>
+</html>

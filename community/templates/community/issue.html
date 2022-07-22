@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div id="issueWrap">
+    {% for issue in issues reversed %}
+    <div class="issue">
+        <div id="issueRoom"><a href="">{{issue.Room}}</a></div>
+        <div id="issueProf"><a href="">{{issue.Prof}}</a></div>
+        <div id="issueName"><a href="">{{issue.Name}}</a></div>
+        <div id="issueContent"><a href="">{{issue.Content}}</a></div>
+        <div id="issueTime">{{issue.Time.hour}}:{{issue.Time.minute}}</div>
+        <div id="issueMore"><div>⁝</div></div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
