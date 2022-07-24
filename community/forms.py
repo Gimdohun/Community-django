@@ -9,10 +9,4 @@ class RoomForm(ModelForm):
 class RegisterForm(ModelForm):
     class Meta:
         model = UserInfo
-        fields = (
-            'Name',
-            'Email',
-            'UserID',
-            'UserPW',
-            'ReUserPW'
-        )
+        fields = '__all__'

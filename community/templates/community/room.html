@@ -1,5 +1,7 @@
 {% extends 'home.html' %}
 
 {% block content %}
-{{ room }}
-{% endblock %}
+    {{ room.name }}
+    <a href="{% url 'update-room' room.id %}">Edit</a>
+    <a href="{% url 'delete-room' room.id %}">Delete</a>
+{% endblock content %}
