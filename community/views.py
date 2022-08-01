@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Issue, Room
-from .forms import RoomForm, RegisterForm
+from .forms import RoomForm
 from django.contrib.auth import login
 # Create your views here.
 def community_main(request):
@@ -47,15 +47,3 @@ def updateRoom(request, pk):
     context = {'rooms':rooms, 'room':room, 'form':form}
     return render(request, 'community/roomForm.html', context)
 
-def register(request):
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        password = request.POST.get("userPW")
-        confirm_pw = request.POST.get("reUserPW")
-        if form.is_valid() and password == confirm_pw:
-            user = form.save(commit=False)
-            user.save()
-            return redirect('community_main')
-    else:
-        form = RegisterForm()
-    return render(request, 'community/register.html', {'form':form})

@@ -10,16 +10,16 @@
 </head>
 <body>
     <header>
-        <div><a href="{% url 'community_main' %}">⌨️</a></div>
+        <div><a href="{% url 'community:community_main' %}">⌨️</a></div>
         <div><input type="search" name="" id="" placeholder="Search user"></div>
-        <div><a href="{% url 'register' %}">sign up</a></div>
+        <div><a href="{% url 'userdb:register' %}">sign up</a></div>
         <div><a href="">sign in</a></div>
     </header>
     <nav>
-        <a href="{% url 'create-room' %}">Create Room</a>
+        <a href="{% url 'community:create-room' %}">Create Room</a>
         <div id="roomWrap">
             {% for room in rooms %}
-                <div><a href="{% url 'room' room.id %}">{{ room.name }}-{{ room.id }}</a></div>
+                <div><a href="{% url 'community:room' room.id %}">{{ room.name }}-{{ room.id }}</a></div>
             {% endfor %}
         </div>
     </nav>

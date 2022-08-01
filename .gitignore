@@ -1,8 +1,9 @@
 # Default ignored files
 /shelf/
 .idea
+__pycache__/
+*.pyc
 # Editor-based HTTP Client requests
 /httpRequests/
 
 
-__pycache__
